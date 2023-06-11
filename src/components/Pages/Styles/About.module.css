@@ -1,0 +1,32 @@
+.main {
+    background-color: rgb(33,37,41);
+    width: 100%;
+}
+
+.header {
+    margin-bottom: 1.2rem;
+    padding-top: 2rem;
+    /* margin: 0 0 5px 0; */
+    color: #545454;
+    font-size: 35px;
+    line-height: 38px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.paragraph {
+    margin-bottom: 0;
+    line-height: 26px;
+    font-size: 16px;
+    color: #8c9597;
+    font-weight: 400;
+    word-wrap: break-word;
+    padding-bottom: 2rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+
+@media only screen and (max-width: 796px) {
+    
+}
