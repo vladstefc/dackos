@@ -5,6 +5,7 @@ import Contact from "../Pages/Contact";
 import Main from "../Pages/Main";
 import Portfolio from "../Pages/Portfolio";
 import Testimonials from "../Pages/Testimonials";
+import Footer from "./Footer";
 
 const Layout = () => {
   return (
@@ -15,6 +16,7 @@ const Layout = () => {
       <Portfolio />
       <Testimonials />
       <Contact />
+      <Footer />
       {/* </Container> */}
     </section>
   );

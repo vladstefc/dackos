@@ -34,11 +34,6 @@ const content = [
     rating: 5,
     text: '"I was truly impressed with Dackos Construction Limited. Their team showcased remarkable professionalism and attention to detail. The project was completed flawlessly within the agreed timeline and budget. I highly recommend them for their outstanding work and commitment to customer satisfaction. Thank you, Dackos Construction Limited!"',
   },
-  // {
-  //   name: "Maria",
-  //   rating: 5,
-  //   text: '"Working with Dackos Construction Limited was an absolute pleasure. Their expertise and skilled craftsmanship were evident throughout the project. They delivered exceptional results, exceeding my expectations. The team\'s attention to detail and dedication to customer satisfaction were commendable. I highly recommend them for any construction needs."',
-  // },
 ];
 
 const Testimonials = () => {

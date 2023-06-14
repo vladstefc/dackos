@@ -56,7 +56,12 @@ const Contact = () => {
 
   return (
     <ContactSection>
-      <Typography variant="h4" align="center" gutterBottom>
+      <Typography
+        variant="h4"
+        align="center"
+        gutterBottom
+        style={{ paddingBottom: "2rem" }}
+      >
         Contact Us
       </Typography>
       <ContactForm onSubmit={handleSubmit}>
