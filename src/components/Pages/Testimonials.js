@@ -13,16 +13,22 @@ import styles from "./Styles/Testimonials.module.css";
 const content = [
   {
     name: "Sophie",
+    image:
+      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1600",
     rating: 5,
     text: '"Dackos Construction Limited exceeded our expectations with their professionalism, attention to detail, and flawless execution. Their skilled craftsmen delivered exceptional work within the agreed timeframe and budget. We highly recommend them for their outstanding service and ability to bring our vision to life."',
   },
   {
     name: "David",
+    image:
+      "https://images.pexels.com/photos/819530/pexels-photo-819530.jpeg?auto=compress&cs=tinysrgb&w=1600",
     rating: 4.5,
     text: '"Dackos Construction Limited surpassed my expectations. Their professionalism, expertise, and meticulousness were outstanding. From the initial consultation to the final outcome, their exceptional project management skills ensured a seamless process. The craftsmanship by skilled workers was of the utmost quality, delivering excellent results on schedule and within budget. Highly recommended!"',
   },
   {
     name: "John",
+    image:
+      "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1600",
     rating: 5,
     text: '"I was truly impressed with Dackos Construction Limited. Their team showcased remarkable professionalism and attention to detail. The project was completed flawlessly within the agreed timeline and budget. I highly recommend them for their outstanding work and commitment to customer satisfaction. Thank you, Dackos Construction Limited!"',
   },
@@ -64,7 +70,6 @@ const Testimonials = (props) => {
           gutterBottom
           style={{
             color: "#333333",
-
             padding: "2rem 0 2rem 0",
           }}
         >
@@ -79,6 +84,13 @@ const Testimonials = (props) => {
                   src={testimonial.image}
                   sx={{ width: 80, height: 80, marginBottom: 2 }}
                 />
+                <Typography
+                  variant="h6"
+                  color="#212529"
+                  sx={{ marginTop: 2, fontWeight: 600 }}
+                >
+                  {testimonial.name}
+                </Typography>
                 <Rating
                   value={testimonial.rating}
                   precision={0.5}
@@ -92,13 +104,6 @@ const Testimonials = (props) => {
                   style={{ fontSize: "16px", lineHeight: "24px" }}
                 >
                   {testimonial.text}
-                </Typography>
-                <Typography
-                  variant="h6"
-                  color="primary"
-                  sx={{ marginTop: 2, fontWeight: 600 }}
-                >
-                  {testimonial.name}
                 </Typography>
               </TestimonialCard>
             </Grid>
