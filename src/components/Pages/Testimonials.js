@@ -1,22 +1,14 @@
-import React from "react";
-import { Typography, Box, Grid } from "@mui/material";
+import React, { useState } from "react";
+
+import CustomModal from "../UI/CustomModal";
+import { Typography, Grid, Modal } from "@mui/material";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 
 import Avatar from "@mui/material/Avatar";
 import Rating from "@mui/material/Rating";
 
 import { styled } from "@mui/material/styles";
-
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-import avatar1 from "../../assets/images/testimonials/pexels-photo-4927361.webp";
-
-const images = ["../../assets/images/testimonials/pexels-photo-4927361.webp"];
+import styles from "./Styles/Testimonials.module.css";
 
 const content = [
   {
@@ -27,7 +19,7 @@ const content = [
   {
     name: "David",
     rating: 4.5,
-    text: '"Dackos Construction Limited exceeded my expectations. Their professionalism, expertise, and attention to detail were remarkable. From initial consultation to final result, their exceptional project management skills ensured a seamless process. The craftsmanship by skilled workers was of the highest quality, delivering outstanding results on time and within budget. Highly recommended!"',
+    text: '"Dackos Construction Limited surpassed my expectations. Their professionalism, expertise, and meticulousness were outstanding. From the initial consultation to the final outcome, their exceptional project management skills ensured a seamless process. The craftsmanship by skilled workers was of the utmost quality, delivering excellent results on schedule and within budget. Highly recommended!"',
   },
   {
     name: "John",
@@ -36,7 +28,9 @@ const content = [
   },
 ];
 
-const Testimonials = () => {
+const Testimonials = (props) => {
+  const [showModal, setShowModal] = useState(false);
+
   const TestimonialCard = styled(Card)(({ theme }) => ({
     backgroundColor: "#f9f9f9",
     padding: theme.spacing(4),
@@ -52,6 +46,14 @@ const Testimonials = () => {
     },
     height: "100%",
   }));
+
+  const openModalHandler = () => {
+    setShowModal(true);
+  };
+
+  const onClose = () => {
+    setShowModal(false);
+  };
 
   return (
     <section style={{ backgroundColor: "#f5f5f5" }}>
@@ -101,28 +103,14 @@ const Testimonials = () => {
           </Grid>
         ))}
       </Grid>
+      <div className={styles.feedback}>
+        <button className={styles.btn} onClick={openModalHandler}>
+          Leave us a feedback
+        </button>
+        {showModal ? <CustomModal onClose={props.onClose} /> : ""}
+      </div>
     </section>
   );
 };
 
 export default Testimonials;
-
-{
-  /* 
-      <p>
-        "Working with <b>Dackos Construction Limited</b> was an absolute
-        pleasure. From the initial consultation to the completion of our
-        project, they demonstrated exceptional professionalism, expertise, and
-        attention to detail. The team went above and beyond to ensure that our
-        vision was brought to life, delivering outstanding results that exceeded
-        our expectations. Their skilled craftsmen and project managers worked
-        seamlessly together, completing the project on time and within budget.
-        The quality of their workmanship and their commitment to customer
-        satisfaction truly sets them apart. We highly recommend XYZ Construction
-        Company for any construction needs and look forward to working with them
-        again in the future."
-      </p>
-      <h5>
-        <i>Sophie</i>
-      </h5> */
-}

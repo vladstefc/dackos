@@ -9,6 +9,9 @@ const Portfolio = () => {
       <div className={styles.carousel}>
         <ImageCarouse />
       </div>
+      <div className={styles.button}>
+        <button className={styles.btn}>More here</button>
+      </div>
     </section>
   );
 };
