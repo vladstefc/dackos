@@ -17,11 +17,11 @@ const FeedBack = (props) => {
     <div className={styles.formContainer}>
       <form className={styles.form}>
         <div className={styles.formGroup}>
-          <label htmlFor="email">Your Name</label>
-          <input type="text" id="email" name="email" required="" />
+          <label htmlFor="name">Your Name</label>
+          <input type="text" id="name" name="name" required="" />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="textarea">How Can We Help You?</label>
+          <label htmlFor="textarea">Leave Us A Feedback</label>
           <textarea
             name="textarea"
             id="textarea"

@@ -63,7 +63,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className={styles.main}>
+    <div id="Contact" className={styles.main}>
       <Container>
         <ContactSection style={{ backgroundColor: "white" }}>
           <Typography

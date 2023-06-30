@@ -1,6 +1,6 @@
 const Portfolio = () => {
   return (
-    <section id="portfolio">
+    <section id="Portfolio">
       <h1>Portfolio</h1>
     </section>
   );

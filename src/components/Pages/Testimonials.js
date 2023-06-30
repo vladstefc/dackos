@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import CustomModal from "../UI/CustomModal";
-import { Typography, Grid, Modal, Container } from "@mui/material";
+import { Typography, Grid, Container } from "@mui/material";
 import Card from "@mui/material/Card";
 
 import Avatar from "@mui/material/Avatar";

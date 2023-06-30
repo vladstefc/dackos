@@ -1,13 +1,13 @@
 import { Container } from "@mui/material";
 import ImageCarouse from "../UI/ImageCarousel";
-import styles from "./Styles/Portfolio.module.css";
+import styles from "./Styles/MainPortfolio.module.css";
 import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const openPortfolioHandler = () => {};
 
   return (
-    <section className={styles.main}>
+    <section className={styles.main} id="Portfolio">
       <Container>
         <h3 className={styles.header}>Portfolio</h3>
         <p className={styles.paragraph}>

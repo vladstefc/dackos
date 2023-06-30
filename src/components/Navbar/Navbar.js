@@ -27,7 +27,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" style={{ background: "rgb(33, 37, 41)" }}>
+    <AppBar position="fixed" style={{ background: "rgb(33, 37, 41)" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -134,7 +134,7 @@ function NavBar() {
                 style={{ color: "rgb(147,157,158)" }}
               >
                 <Link
-                  href={`/${page}`}
+                  href={`#${page}`}
                   style={{ textDecoration: "none", color: "#8c9597" }}
                 >
                   {page}
