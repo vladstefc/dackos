@@ -86,7 +86,7 @@ function NavBar() {
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
                     <Link
-                      href={`/${page}`}
+                      href={`#${page}`}
                       style={{ textDecoration: "none", color: "#8c9597" }}
                     >
                       {page}
