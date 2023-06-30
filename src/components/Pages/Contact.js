@@ -1,6 +1,14 @@
 import React, { useState } from "react";
-import { Typography, TextField, Button, Grid, Snackbar } from "@mui/material";
+import {
+  Typography,
+  TextField,
+  Button,
+  Grid,
+  Snackbar,
+  Container,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
+import styles from "./Styles/Contact.module.css";
 
 const ContactSection = styled("section")(({ theme }) => ({
   backgroundColor: "#f9f9f9",
@@ -55,67 +63,75 @@ const Contact = () => {
   };
 
   return (
-    <ContactSection>
-      <Typography
-        variant="h4"
-        align="center"
-        gutterBottom
-        style={{ paddingBottom: "2rem" }}
-      >
-        Contact Us
-      </Typography>
-      <ContactForm onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}></Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              label="Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              variant="outlined"
-              required
-              fullWidth
+    <div id="contact" className={styles.main}>
+      <Container>
+        <ContactSection style={{ backgroundColor: "white" }}>
+          <Typography
+            variant="h4"
+            align="center"
+            gutterBottom
+            style={{ paddingBottom: "2rem" }}
+          >
+            Contact Us
+          </Typography>
+          <ContactForm onSubmit={handleSubmit}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}></Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="Name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  variant="outlined"
+                  required
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="Email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  variant="outlined"
+                  required
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  multiline
+                  rows={4}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <ContactButton
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                >
+                  Submit
+                </ContactButton>
+              </Grid>
+            </Grid>
+            <Snackbar
+              open={openSnackbar}
+              autoHideDuration={5000}
+              onClose={handleCloseSnackbar}
+              message="Form submitted successfully!"
             />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              label="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              variant="outlined"
-              required
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              label="Message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              variant="outlined"
-              required
-              fullWidth
-              multiline
-              rows={4}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <ContactButton type="submit" variant="contained" color="primary">
-              Submit
-            </ContactButton>
-          </Grid>
-        </Grid>
-        <Snackbar
-          open={openSnackbar}
-          autoHideDuration={5000}
-          onClose={handleCloseSnackbar}
-          message="Form submitted successfully!"
-        />
-      </ContactForm>
-    </ContactSection>
+          </ContactForm>
+        </ContactSection>
+      </Container>
+    </div>
   );
 };
 

@@ -2,11 +2,17 @@ import React, { useState } from "react";
 
 import styles from "./FeedBack.module.css";
 
-const FeedBack = () => {
+const FeedBack = (props) => {
+  const [text, setText] = useState("Your message here");
+
+  const textChange = (e) => {
+    setText(e.target.value);
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
   };
-  const closeHandler = () => {};
+
   return (
     <div className={styles.formContainer}>
       <form className={styles.form}>
@@ -15,16 +21,15 @@ const FeedBack = () => {
           <input type="text" id="email" name="email" required="" />
         </div>
         <div className={styles.formGroup}>
-          <label for="textarea">How Can We Help You?</label>
+          <label htmlFor="textarea">How Can We Help You?</label>
           <textarea
             name="textarea"
             id="textarea"
             rows="10"
             cols="50"
             required=""
-          >
-            {" "}
-          </textarea>
+            onChange={textChange}
+          ></textarea>
         </div>
         <div className={styles.btnGroup}>
           <button
@@ -37,7 +42,7 @@ const FeedBack = () => {
           <button
             className={styles.formSubmitBtn}
             type="button"
-            onClick={closeHandler}
+            onClick={props.onClose}
           >
             Close
           </button>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import CustomModal from "../UI/CustomModal";
-import { Typography, Grid, Modal } from "@mui/material";
+import { Typography, Grid, Modal, Container } from "@mui/material";
 import Card from "@mui/material/Card";
 
 import Avatar from "@mui/material/Avatar";
@@ -51,64 +51,66 @@ const Testimonials = (props) => {
     setShowModal(true);
   };
 
-  const onClose = () => {
+  const hideModalHandler = () => {
     setShowModal(false);
   };
 
   return (
     <section style={{ backgroundColor: "#f5f5f5" }}>
-      <Typography
-        variant="h4"
-        align="center"
-        gutterBottom
-        style={{
-          color: "#333333",
-          marginTop: "2rem",
-          padding: "2rem 0 2rem 0",
-        }}
-      >
-        Testimonials
-      </Typography>
-      <Grid container spacing={4} justifyContent="center">
-        {content.map((testimonial, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <TestimonialCard>
-              <Avatar
-                alt={testimonial.name}
-                src={testimonial.image}
-                sx={{ width: 80, height: 80, marginBottom: 2 }}
-              />
-              <Rating
-                value={testimonial.rating}
-                precision={0.5}
-                readOnly
-                size="large"
-                sx={{ marginBottom: 2 }}
-              />
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                style={{ fontSize: "16px", lineHeight: "24px" }}
-              >
-                {testimonial.text}
-              </Typography>
-              <Typography
-                variant="h6"
-                color="primary"
-                sx={{ marginTop: 2, fontWeight: 600 }}
-              >
-                {testimonial.name}
-              </Typography>
-            </TestimonialCard>
-          </Grid>
-        ))}
-      </Grid>
-      <div className={styles.feedback}>
-        <button className={styles.btn} onClick={openModalHandler}>
-          Leave us a feedback
-        </button>
-        {showModal ? <CustomModal onClose={props.onClose} /> : ""}
-      </div>
+      <Container>
+        <Typography
+          variant="h4"
+          align="center"
+          gutterBottom
+          style={{
+            color: "#333333",
+
+            padding: "2rem 0 2rem 0",
+          }}
+        >
+          Testimonials
+        </Typography>
+        <Grid container spacing={4} justifyContent="center">
+          {content.map((testimonial, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <TestimonialCard>
+                <Avatar
+                  alt={testimonial.name}
+                  src={testimonial.image}
+                  sx={{ width: 80, height: 80, marginBottom: 2 }}
+                />
+                <Rating
+                  value={testimonial.rating}
+                  precision={0.5}
+                  readOnly
+                  size="large"
+                  sx={{ marginBottom: 2 }}
+                />
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  style={{ fontSize: "16px", lineHeight: "24px" }}
+                >
+                  {testimonial.text}
+                </Typography>
+                <Typography
+                  variant="h6"
+                  color="primary"
+                  sx={{ marginTop: 2, fontWeight: 600 }}
+                >
+                  {testimonial.name}
+                </Typography>
+              </TestimonialCard>
+            </Grid>
+          ))}
+        </Grid>
+        <div className={styles.feedback}>
+          <button className={styles.btn} onClick={openModalHandler}>
+            Leave us a feedback
+          </button>
+          {showModal ? <CustomModal onClose={hideModalHandler} /> : ""}
+        </div>
+      </Container>
     </section>
   );
 };

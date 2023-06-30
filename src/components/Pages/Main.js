@@ -8,7 +8,7 @@ import styles from "./Styles/Main.module.css";
 
 const Main = () => {
   return (
-    <div className={styles.main}>
+    <div className={styles.main} id="main">
       <div className={styles.overlay}>
         <img src={background} alt="Dackos Construction Limited" />
       </div>

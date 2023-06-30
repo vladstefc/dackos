@@ -9,10 +9,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "@mui/material";
 
 import logo from "../../assets/images/logo-removedbg.png";
 
-const pages = ["About Us", "Portfolio", "Contact Us"];
+const pages = ["About", "Portfolio", "Contact"];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -83,7 +84,14 @@ function NavBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">
+                    <Link
+                      href={`/${page}`}
+                      style={{ textDecoration: "none", color: "#8c9597" }}
+                    >
+                      {page}
+                    </Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -93,7 +101,7 @@ function NavBar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -125,7 +133,12 @@ function NavBar() {
                 sx={{ my: 2, color: "white", display: "block" }}
                 style={{ color: "rgb(147,157,158)" }}
               >
-                {page}
+                <Link
+                  href={`/${page}`}
+                  style={{ textDecoration: "none", color: "#8c9597" }}
+                >
+                  {page}
+                </Link>
               </Button>
             ))}
           </Box>
