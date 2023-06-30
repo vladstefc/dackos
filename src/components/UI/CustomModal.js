@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import ReactDOM from "react-dom";
 
-import styles from "./Modal.module.css";
+import styles from "./CustomModal.module.css";
 import FeedBack from "../UI/FeedBack";
 
 const Backdrop = (props) => {
