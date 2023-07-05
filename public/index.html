@@ -38,8 +38,48 @@
               onSubmit="submit"
               hidden
             >
+              <input type="hidden" name="form-name" value="contact v1" />
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="name">
+                  Name:
+                </label>
+                <input
+                  id="name"
+                  required=""
+                  placeholder="Enter your name"
+                  className={styles.formInput}
+                  type="text"
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="email">
+                  Email:
+                </label>
+                <input
+                  required=""
+                  placeholder="Enter your email"
+                  className={styles.formInput}
+                  name="email"
+                  id="email"
+                  type="email"
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="message">
+                  Message:
+                </label>
+                <textarea
+                  required=""
+                  placeholder="Enter your message"
+                  className={styles.formInput}
+                  name="message"
+                  id="message"
+                ></textarea>
+              </div>
+              <button className={styles.formButton} type="submit">
+                Send message
+              </button>
             </form>
-            <input type="hidden" name="form-name" value="contact v1" />
 
     <!--
       This HTML file is a template.
