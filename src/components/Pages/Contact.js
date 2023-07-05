@@ -24,11 +24,11 @@ const Contact = () => {
           <div className={styles.right}>
             <form
               className={styles.colorfulForm}
-              name="contact-v1"
+              name="contact"
               method="POST"
               data-netlify="true"
             >
-              <input type="hidden" name="form-name" value="contact-v1" />
+              <input type="hidden" name="form-name" value="contact" />
               <div className={styles.formGroup}>
                 <label className={styles.formLabel} htmlFor="name">
                   Name:
