@@ -24,11 +24,12 @@ const Contact = () => {
           <div className={styles.right}>
             <form
               className={styles.colorfulForm}
-              name="contact"
+              name="contact v1"
               method="POST"
               data-netlify="true"
+              onSubmit="submit"
             >
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="contact v1" />
               <div className={styles.formGroup}>
                 <label className={styles.formLabel} htmlFor="name">
                   Name:
@@ -67,7 +68,7 @@ const Contact = () => {
                 ></textarea>
               </div>
               <button className={styles.formButton} type="submit">
-                Submit
+                Send message
               </button>
             </form>
           </div>
