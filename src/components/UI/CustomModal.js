@@ -26,9 +26,7 @@ const CustomModal = (props) => {
         portalElement
       )}
       {ReactDOM.createPortal(
-        <ModalOverlay>
-          <FeedBack onClose={props.onClose} />
-        </ModalOverlay>,
+        <ModalOverlay>{props.children}</ModalOverlay>,
         portalElement
       )}
     </Fragment>

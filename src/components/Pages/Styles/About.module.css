@@ -29,12 +29,12 @@
     font-weight: 400;
     word-wrap: break-word;
     padding-bottom: 2rem;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding-left: 1.2rem; 
+    padding-right: 1.2rem; 
 }
 
 @media only screen and (max-width:768px) {
     .paragraph {
-      padding: 0 2rem;
+      /* padding: 0 1.2rem; */
     }
   }

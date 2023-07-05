@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import CustomModal from "../UI/CustomModal";
+import FeedBack from "../UI/FeedBack";
+
 import { Typography, Grid, Container } from "@mui/material";
 import Card from "@mui/material/Card";
 
@@ -113,7 +115,13 @@ const Testimonials = (props) => {
           <button className={styles.btn} onClick={openModalHandler}>
             Leave us a feedback
           </button>
-          {showModal ? <CustomModal onClose={hideModalHandler} /> : ""}
+          {showModal ? (
+            <CustomModal onClose={hideModalHandler}>
+              <FeedBack onClose={props.onClose} />
+            </CustomModal>
+          ) : (
+            ""
+          )}
         </div>
       </Container>
     </section>
