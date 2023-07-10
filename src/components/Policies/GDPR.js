@@ -21,7 +21,7 @@ const gdprText = (
       data in accordance with the General Data Protection Regulation (GDPR).
     </p>
     <h3>Data Collection and Use</h3>
-    <uL>
+    <ul>
       <li>
         <p>
           Lawful Basis for Processing: We collect and process personal data
@@ -66,7 +66,7 @@ const gdprText = (
           compliance with the GDPR.
         </p>
       </li>
-    </uL>
+    </ul>
     <h3>User Rights</h3>
     <ul>
       <li>

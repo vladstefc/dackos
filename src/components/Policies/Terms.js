@@ -113,7 +113,7 @@ const termsText = (
     <p>
       If you have any questions or concerns regarding these Terms and
       Conditions, please contact us using the information provided below: [Your
-      Company Name] [Address] [City
+      Company Name] [Address] [City]
     </p>
   </div>
 );
