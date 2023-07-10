@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import ImageCarouse from "../UI/ImageCarousel";
 import styles from "./Styles/MainPortfolio.module.css";
 import { Link } from "react-router-dom";
+import CustomImageSlider from "../UI/CustomImageSlider";
 
 const Portfolio = () => {
   const openPortfolioHandler = () => {};

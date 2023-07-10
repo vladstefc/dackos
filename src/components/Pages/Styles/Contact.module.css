@@ -82,6 +82,14 @@
     background-color: #ff5f59;
   }
   
+  .invalid {
+    border: 2px solid red;
+    border-radius: .5rem;
+  }
+
+  .error-text {
+    color: #b40e0e;
+  }
   
 
 @media only screen and (max-width: 768px) {

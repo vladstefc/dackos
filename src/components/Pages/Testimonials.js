@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import CustomModal from "../UI/CustomModal";
 import FeedBack from "../UI/FeedBack";
 
-import { Typography, Grid, Container } from "@mui/material";
+import { Typography, Grid, Container, Button } from "@mui/material";
 import Card from "@mui/material/Card";
 
 import Avatar from "@mui/material/Avatar";
@@ -11,6 +11,7 @@ import Rating from "@mui/material/Rating";
 
 import { styled } from "@mui/material/styles";
 import styles from "./Styles/Testimonials.module.css";
+import CustomButton from "../UI/CustomButton";
 
 const content = [
   {
@@ -64,7 +65,13 @@ const Testimonials = (props) => {
   };
 
   return (
-    <section style={{ backgroundColor: "#f5f5f5" }}>
+    <section
+      style={{
+        backgroundColor: "#f5f5f5",
+        marginBottom: "1.2rem",
+        paddingBottom: "1.2rem",
+      }}
+    >
       <Container>
         <Typography
           variant="h4"
@@ -77,7 +84,12 @@ const Testimonials = (props) => {
         >
           Testimonials
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid
+          container
+          spacing={4}
+          justifyContent="center"
+          marginBottom="1.2rem"
+        >
           {content.map((testimonial, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <TestimonialCard>
@@ -111,10 +123,17 @@ const Testimonials = (props) => {
             </Grid>
           ))}
         </Grid>
-        <div className={styles.feedback}>
-          <button className={styles.btn} onClick={openModalHandler}>
+        {/* <div className={styles.feedback}>
+          <Button
+            variant="outlined"
+            onClick={openModalHandler}
+            sx={{
+              color: "#212529",
+              borderColor: "#212529",
+            }}
+          >
             Leave us a feedback
-          </button>
+          </Button>
           {showModal ? (
             <CustomModal onClose={hideModalHandler}>
               <FeedBack onClose={props.onClose} />
@@ -122,7 +141,7 @@ const Testimonials = (props) => {
           ) : (
             ""
           )}
-        </div>
+        </div> */}
       </Container>
     </section>
   );
