@@ -156,7 +156,9 @@ const Contact = () => {
                   onBlur={fistNameBlurHandler}
                 />
                 {firstNameInputHasError && (
-                  <p className="error-text">First name must not be empty</p>
+                  <p className={styles.errorText}>
+                    First name must not be empty
+                  </p>
                 )}
               </div>
               <div className={styles.formGroup}>
@@ -174,7 +176,9 @@ const Contact = () => {
                   onBlur={lastNameBlurHandler}
                 />
                 {lastNameInputHasError && (
-                  <p className="error-text">Last name must not be empty</p>
+                  <p className={styles.errorText}>
+                    Last name must not be empty
+                  </p>
                 )}
               </div>
               <div className={styles.formGroup}>
@@ -193,7 +197,7 @@ const Contact = () => {
                   onBlur={emailBlurHandler}
                 />
                 {emailInputHasError && (
-                  <p className="error-text">Email must be valid</p>
+                  <p className={styles.errorText}>Email must be valid</p>
                 )}
               </div>
               <div className={styles.formGroup}>
@@ -212,7 +216,9 @@ const Contact = () => {
                   value={enteredText}
                 ></textarea>
                 {textInputHasError && (
-                  <p className="error-text">Message field must not be empty</p>
+                  <p className={styles.errorText}>
+                    Message field must not be empty
+                  </p>
                 )}
               </div>
               <button
