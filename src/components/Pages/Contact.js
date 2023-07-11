@@ -1,11 +1,16 @@
-import React from "react";
-import { Typography, Container } from "@mui/material";
+import React, { useState } from "react";
+import { Typography, Container, Alert, Backdrop, Button } from "@mui/material";
 
 import useInput from "../../hooks/useInput";
 
 import styles from "./Styles/Contact.module.css";
+import SuccessCard from "../UI/SuccessCard";
+import ErrorCard from "../UI/ErrorCard";
 
 const Contact = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [open, setOpen] = useState(true);
+
   const {
     value: enteredFirstName,
     isValid: enteredFirstNameIsValid,
@@ -32,6 +37,15 @@ const Contact = () => {
     reset: resetEmailInput,
   } = useInput((value) => value.includes("@"));
 
+  const {
+    value: enteredText,
+    isValid: enteredTextIsValid,
+    hasError: textInputHasError,
+    valueChangeHandler: textChangedHandler,
+    inputBlurHandler: textBlurHandler,
+    reset: resetTextInput,
+  } = useInput((value) => value.length > 0);
+
   const firstNameInputStyles = `${styles.formInput} ${
     firstNameInputHasError ? styles.invalid : ""
   }`;
@@ -41,13 +55,17 @@ const Contact = () => {
   const emailInputStyles = `${styles.formInput} ${
     emailInputHasError ? styles.invalid : ""
   }`;
+  const textareaStyles = `${styles.formInput} ${
+    textInputHasError ? styles.invalid : ""
+  }`;
 
   let formIsValid = false;
 
   if (
     enteredFirstNameIsValid &&
     enteredLastNameIsValid &&
-    enteredEmailIsValid
+    enteredEmailIsValid &&
+    enteredTextIsValid
   ) {
     formIsValid = true;
   }
@@ -67,13 +85,34 @@ const Contact = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => console.log("Form successfully submitted"))
-      .catch((error) => alert(error));
+      .then(() => setIsSubmitted(true))
+      .catch((error) => {
+        return <ErrorCard />;
+      });
+
+    console.log(formData);
 
     resetFirstNameInput();
     resetLastNameInput();
     resetEmailInput();
+    resetTextInput();
+    setIsSubmitted(false);
+    setOpen(true);
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const submittedMessage = (
+    <Backdrop
+      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={open}
+      onClick={handleClose}
+    >
+      <SuccessCard />
+    </Backdrop>
+  );
 
   return (
     <div id="Contact" className={styles.main}>
@@ -103,11 +142,11 @@ const Contact = () => {
             >
               <input type="hidden" name="form-name" value="contact v1" />
               <div className={styles.formGroup}>
-                <label className={styles.formLabel} htmlFor="name">
+                <label className={styles.formLabel} htmlFor="firstName">
                   First Name:
                 </label>
                 <input
-                  id="name"
+                  id="firstName"
                   required=""
                   placeholder="Enter your first name"
                   className={firstNameInputStyles}
@@ -121,11 +160,11 @@ const Contact = () => {
                 )}
               </div>
               <div className={styles.formGroup}>
-                <label className={styles.formLabel} htmlFor="name">
+                <label className={styles.formLabel} htmlFor="lastName">
                   Last Name:
                 </label>
                 <input
-                  id="name"
+                  id="lastName"
                   required=""
                   placeholder="Enter your last name"
                   className={lastNameInputStyles}
@@ -154,7 +193,7 @@ const Contact = () => {
                   onBlur={emailBlurHandler}
                 />
                 {emailInputHasError && (
-                  <p className="error-text">Email must not be empty</p>
+                  <p className="error-text">Email must be valid</p>
                 )}
               </div>
               <div className={styles.formGroup}>
@@ -164,10 +203,17 @@ const Contact = () => {
                 <textarea
                   required=""
                   placeholder="Enter your message"
-                  className={styles.formInput}
+                  className={textareaStyles}
                   name="message"
                   id="message"
+                  onChange={textChangedHandler}
+                  onBlur={textBlurHandler}
+                  minLength={1}
+                  value={enteredText}
                 ></textarea>
+                {textInputHasError && (
+                  <p className="error-text">Message field must not be empty</p>
+                )}
               </div>
               <button
                 className={styles.formButton}
@@ -179,6 +225,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
+        {isSubmitted ? submittedMessage : ""}
       </Container>
     </div>
   );
