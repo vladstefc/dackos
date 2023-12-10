@@ -142,7 +142,7 @@ const Contact = () => {
                 </label>
                 <input
                   id="firstName"
-                  name="firtName"
+                  name="firstName"
                   required=""
                   placeholder="Enter your first name"
                   className={firstNameInputStyles}
