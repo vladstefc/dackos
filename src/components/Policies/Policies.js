@@ -37,9 +37,7 @@ const Policies = (props) => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} className="footerButton">
-            Close
-          </Button>
+          <Button onClick={handleClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </div>
