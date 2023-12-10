@@ -1,7 +1,6 @@
-import { useState } from "react";
+import React from "react";
 
 import PrivacyPolicy from "../Policies/PrivacyPolicy";
-import CustomModal from "../UI/CustomModal";
 
 import styles from "./Footer.module.css";
 
@@ -40,8 +39,16 @@ const Footer = (props) => {
             <div className={styles.socials}>
               <h5>Check us out on our socials:</h5>
               <div className={styles.socialIcons}>
-                <InstagramIcon sx={{ mr: 2 }} />
-                <FacebookIcon />
+                <a href="" target="_blank" rel="noreferrer">
+                  <InstagramIcon sx={{ mr: 2, color: "#8c9597" }} />
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100083291291337"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FacebookIcon sx={{ color: "#8c9597" }} />
+                </a>
               </div>
             </div>
           </div>

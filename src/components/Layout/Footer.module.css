@@ -2,41 +2,38 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-
-    /* outline-style: dotted;
-    outline-color: red; */
 }
 
 .topFooter {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
-    /* outline-style: dotted;
-    outline-color: yellow; */
 }
 
 .socials {
-    width: 350px;
-    /* outline-style: dotted;
-    outline-color: green; */
-
+    width:250px;
+    height: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    text-align: center;
-    
+    justify-content: center;   
     
 }
 
 .socials h5 {
     font-size: 12px;
     text-align: center;
+    padding: 5px;
+    margin: auto;
     
-    /* outline-style: dotted;
-    outline-color: pink; */
-    
+}
+
+.socialIcons{
+    margin:auto;
+}
+
+a {
+    color: rgb(140,135,136);
+    text-decoration: none;   
 }
 
 
@@ -51,7 +48,6 @@
 
     .socials {
         width: 200px;
-
         display: flex;
         flex-direction: column;
         align-items: center;

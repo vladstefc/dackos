@@ -1,12 +1,8 @@
 import { Container } from "@mui/material";
-import ImageCarouse from "../UI/ImageCarousel";
 import styles from "./Styles/MainPortfolio.module.css";
-import { Link } from "react-router-dom";
-import CustomImageSlider from "../UI/CustomImageSlider";
+import SpringImgCarousel from "../UI/SpringImgCarousel";
 
 const Portfolio = () => {
-  const openPortfolioHandler = () => {};
-
   return (
     <section className={styles.main} id="Portfolio">
       <Container>
@@ -15,15 +11,17 @@ const Portfolio = () => {
           You will love our work. Check it out!
         </p>
         <div className={styles.carousel}>
-          <ImageCarouse />
+          <SpringImgCarousel />
         </div>
         <div className={styles.button}>
-          <button className={styles.btn} onClick={openPortfolioHandler}>
+          <a
+            href="https://www.facebook.com/profile.php?id=100083291291337"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.btn}
+          >
             More here
-          </button>
-          {/* <Link to="portfolio" className={styles.btn}>
-            More here
-          </Link> */}
+          </a>
         </div>
       </Container>
     </section>

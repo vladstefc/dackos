@@ -1,45 +1,32 @@
 import React, { useState } from "react";
 
-import CustomModal from "../UI/CustomModal";
-import FeedBack from "../UI/FeedBack";
-
-import { Typography, Grid, Container, Button } from "@mui/material";
+import { Typography, Grid, Container } from "@mui/material";
 import Card from "@mui/material/Card";
 
 import Avatar from "@mui/material/Avatar";
 import Rating from "@mui/material/Rating";
 
 import { styled } from "@mui/material/styles";
-import styles from "./Styles/Testimonials.module.css";
-import CustomButton from "../UI/CustomButton";
 
 const content = [
   {
     name: "Sophie",
-    image:
-      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1600",
     rating: 5,
     text: '"Dackos Construction Limited exceeded our expectations with their professionalism, attention to detail, and flawless execution. Their skilled craftsmen delivered exceptional work within the agreed timeframe and budget. We highly recommend them for their outstanding service and ability to bring our vision to life."',
   },
   {
     name: "David",
-    image:
-      "https://images.pexels.com/photos/819530/pexels-photo-819530.jpeg?auto=compress&cs=tinysrgb&w=1600",
     rating: 4.5,
     text: '"Dackos Construction Limited surpassed my expectations. Their professionalism, expertise, and meticulousness were outstanding. From the initial consultation to the final outcome, their exceptional project management skills ensured a seamless process. The craftsmanship by skilled workers was of the utmost quality, delivering excellent results on schedule and within budget. Highly recommended!"',
   },
   {
     name: "John",
-    image:
-      "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1600",
     rating: 5,
     text: '"I was truly impressed with Dackos Construction Limited. Their team showcased remarkable professionalism and attention to detail. The project was completed flawlessly within the agreed timeline and budget. I highly recommend them for their outstanding work and commitment to customer satisfaction. Thank you, Dackos Construction Limited!"',
   },
 ];
 
 const Testimonials = (props) => {
-  const [showModal, setShowModal] = useState(false);
-
   const TestimonialCard = styled(Card)(({ theme }) => ({
     backgroundColor: "#f9f9f9",
     padding: theme.spacing(4),
@@ -55,14 +42,6 @@ const Testimonials = (props) => {
     },
     height: "100%",
   }));
-
-  const openModalHandler = () => {
-    setShowModal(true);
-  };
-
-  const hideModalHandler = () => {
-    setShowModal(false);
-  };
 
   return (
     <section
@@ -123,25 +102,6 @@ const Testimonials = (props) => {
             </Grid>
           ))}
         </Grid>
-        {/* <div className={styles.feedback}>
-          <Button
-            variant="outlined"
-            onClick={openModalHandler}
-            sx={{
-              color: "#212529",
-              borderColor: "#212529",
-            }}
-          >
-            Leave us a feedback
-          </Button>
-          {showModal ? (
-            <CustomModal onClose={hideModalHandler}>
-              <FeedBack onClose={props.onClose} />
-            </CustomModal>
-          ) : (
-            ""
-          )}
-        </div> */}
       </Container>
     </section>
   );

@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import Policies from "../Policies/Policies";
-
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -31,52 +29,43 @@ const termsText = (
     </p>
     <h3>Website Use</h3>
 
-    <ul>
-      <li>
-        <h4>Information Accuracy</h4>
-        <p>
-          The content on the Website is provided for general informational
-          purposes only. While we strive to ensure the accuracy and completeness
-          of the information, we make no warranties or representations regarding
-          the accuracy, reliability, or suitability of the content. You
-          acknowledge that any reliance on the information is at your own risk.
-        </p>
-      </li>
-      <li>
-        <h4>Use Limitations</h4>
-        <p>
-          You agree to use the Website for lawful purposes only and to comply
-          with all applicable laws and regulations. You may not engage in any
-          activity that could disrupt or interfere with the proper functioning
-          of the Website or infringe upon the rights of others.
-        </p>
-      </li>
-    </ul>
+    <h4>Information Accuracy</h4>
+    <p>
+      The content on the Website is provided for general informational purposes
+      only. While we strive to ensure the accuracy and completeness of the
+      information, we make no warranties or representations regarding the
+      accuracy, reliability, or suitability of the content. You acknowledge that
+      any reliance on the information is at your own risk.
+    </p>
+
+    <h4>Use Limitations</h4>
+    <p>
+      You agree to use the Website for lawful purposes only and to comply with
+      all applicable laws and regulations. You may not engage in any activity
+      that could disrupt or interfere with the proper functioning of the Website
+      or infringe upon the rights of others.
+    </p>
 
     <h3>Limitation of Liability</h3>
-    <ul>
-      <li>
-        <h4>Disclaimer</h4>
-        <p>
-          The Website and its content are provided on an "as is" basis without
-          any warranties or representations, express or implied.{" "}
-          <b>Dackos Construction LTD</b> disclaims all warranties, including but
-          not limited to the accuracy, reliability, or availability of the
-          Website, its content, or any information or products obtained through
-          the Website.
-        </p>
-      </li>
-      <li>
-        <h4>Limitation of Liability</h4>
-        <p>
-          To the fullest extent permitted by law, <b>Dackos Construction LTD</b>{" "}
-          shall not be liable for any direct, indirect, incidental,
-          consequential, or special damages arising out of or in connection with
-          your use of the Website or reliance on its content, even if advised of
-          the possibility of such damages.
-        </p>
-      </li>
-    </ul>
+
+    <h4>Disclaimer</h4>
+    <p>
+      The Website and its content are provided on an "as is" basis without any
+      warranties or representations, express or implied.{" "}
+      <b>Dackos Construction LTD</b> disclaims all warranties, including but not
+      limited to the accuracy, reliability, or availability of the Website, its
+      content, or any information or products obtained through the Website.
+    </p>
+
+    <h4>Limitation of Liability</h4>
+    <p>
+      To the fullest extent permitted by law, <b>Dackos Construction LTD</b>{" "}
+      shall not be liable for any direct, indirect, incidental, consequential,
+      or special damages arising out of or in connection with your use of the
+      Website or reliance on its content, even if advised of the possibility of
+      such damages.
+    </p>
+
     <h3>Third-Party Links</h3>
     <p>
       The Website may contain links to third-party websites that are not owned
@@ -112,8 +101,8 @@ const termsText = (
     <h3>Contact Information</h3>
     <p>
       If you have any questions or concerns regarding these Terms and
-      Conditions, please contact us using the information provided below: [Your
-      Company Name] [Address] [City]
+      Conditions, please contact us using the information provided on the{" "}
+      <b>Contact</b> section on the website.
     </p>
   </div>
 );
@@ -154,9 +143,7 @@ const Terms = (props) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose} sx={{ color: "#8c9597" }}>
-              Close
-            </Button>
+            <button onClick={handleClose}>Close</button>
           </DialogActions>
         </Dialog>
       </div>

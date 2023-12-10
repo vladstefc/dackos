@@ -20,66 +20,50 @@
     color: #8c9597;
     font-weight: 400;
     word-wrap: break-word;
-    padding: 0 0 65px 0;
 }
 
-/* .button {
-    background-color: rgb(33,37,41);
-    color: white;
-    border-radius: 0.7rem;
-    padding: 0.4rem 0.8rem;
+a {
+  text-decoration: none !important;
 }
-
-.button:hover {
-    background-color: #8c9597;
-    color: rgb(33,37,41);
-} */
 
 .btn {
-    position: relative;
-    font-size: 17px;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1em 2.5em;
-    display: inline-block;
-    border-radius: 6em;
-    transition: all .2s;
-    border: none;
-    font-family: inherit;
-    font-weight: 500;
-    color: white;
-    background-color: rgb(33,37,41);
-   }
-   
-   .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-   }
-   
-   .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-   }
-   
-   .btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-   }
-   
-   .btn::after {
-    background-color: rgb(33,37,41);
-   }
-   
-   .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-   }
+  font-size: 18px;
+  color: rgb(33,37,41);
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.btn:focus,
+.btn:hover {
+  color: rgb(84,84,84)
+}
+
+.btn:focus:after,
+.btn:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.btn:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(84,84,84);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
 

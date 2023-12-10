@@ -1,13 +1,10 @@
 import { useState } from "react";
 
-import Policies from "../Policies/Policies";
-
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 
 import styles from "./PrivacyPolicy.module.css";
 
@@ -77,8 +74,8 @@ const privacyText = (
     <h3>Contact Us</h3>
     <p>
       If you have any questions or concerns about this Privacy Policy or our
-      data practices, please contact us at: [Your Company Name] [Address] [City,
-      State, Zip Code] [Email] [Phone]
+      data practices, please contact us using the information provided on the{" "}
+      <b>Contact</b> section on the website.
     </p>
   </div>
 );
@@ -115,10 +112,8 @@ const PrivacyPolicy = (props) => {
               {privacyText}
             </DialogContentText>
           </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} sx={{ color: "#8c9597" }}>
-              Close
-            </Button>
+          <DialogActions sx={{ color: "#212529" }}>
+            <button onClick={handleClose}>Close</button>
           </DialogActions>
         </Dialog>
       </div>

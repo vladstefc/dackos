@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Typography, Container, Alert, Backdrop, Button } from "@mui/material";
+import { Container, Backdrop } from "@mui/material";
 
 import useInput from "../../hooks/useInput";
 
@@ -117,18 +117,13 @@ const Contact = () => {
   return (
     <div id="Contact" className={styles.main}>
       <Container>
-        <Typography
-          variant="h4"
-          align="center"
-          gutterBottom
-          style={{ paddingBottom: "2rem" }}
-        >
-          Contact Us
-        </Typography>
         <div className={styles.sectionContainer}>
           <div className={styles.left}>
-            <h4>dummy text</h4>
-            <p>dummy text 2</p>
+            <div className={styles.contact}>
+              <h2>Contact Us</h2>
+              <p>E-mail: gabriel@dackos.co.uk</p>
+              <p>Phone: +44 7748 414243</p>
+            </div>
           </div>
           <div className={styles.center}></div>
           <div className={styles.right}>
@@ -147,6 +142,7 @@ const Contact = () => {
                 </label>
                 <input
                   id="firstName"
+                  name="firtName"
                   required=""
                   placeholder="Enter your first name"
                   className={firstNameInputStyles}
@@ -167,6 +163,7 @@ const Contact = () => {
                 </label>
                 <input
                   id="lastName"
+                  name="lastName"
                   required=""
                   placeholder="Enter your last name"
                   className={lastNameInputStyles}

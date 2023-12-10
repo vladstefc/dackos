@@ -1,39 +1,42 @@
 .main {
     background-color: white;
+    margin: 3rem 0;
 }
 
 .sectionContainer {
-    /* outline-style: dashed;
-    outline-color: green; */
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .left {
+    flex: 1;
     width: 40%;
-    /* outline-style: dashed;
-    outline-color: red; */
+
+    margin: 0 auto;
+    text-align: left;
 }
 
-.center {
-    border-left: 6px solid rgb(33,37,41);
-    height: 390px;
-    margin-inline: auto;
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact h2 {
+  padding: .5rem;
 }
 
 .right {
-    width: 50%;
-    /* outline-style: dashed;
-    outline-color: blue; */
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .colorfulForm {
-    /* max-width: 400px; */
     width: 100%;
     margin: 0 auto;
     padding: 20px;
@@ -79,7 +82,8 @@
   }
   
   .formButton:hover {
-    background-color: #ff5f59;
+    background-color: rgb(13,110,253);
+    color: #fff;
   }
   
   .invalid {

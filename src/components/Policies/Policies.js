@@ -8,7 +8,6 @@ import DialogContentText from "@mui/material/DialogContentText";
 
 const Policies = (props) => {
   const [open, setOpen] = useState(false);
-  const [isOpenDialog, setIsOpenDialog] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,7 +37,7 @@ const Policies = (props) => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} sx={{ color: "#8c9597" }}>
+          <Button onClick={handleClose} className="footerButton">
             Close
           </Button>
         </DialogActions>

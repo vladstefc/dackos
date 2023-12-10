@@ -7,7 +7,7 @@ const About = () => {
   const yearsOfExperience = new Date().getFullYear() - startingYear;
 
   return (
-    <section className={styles.main} id="About">
+    <section className={`${styles.main} sectionHeight`} id="About">
       <Container>
         <h2 className={styles.header}>About us</h2>
         <p className={`${styles.paragraph} mobileContainer`}>
